@@ -9,10 +9,11 @@ app.use(cors());
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: ["http://localhost:3000", "https://nextjs-starter-eight-opal.vercel.app"], // 允许本地和 Vercel 访问
         methods: ["GET", "POST"]
     }
 });
+
 
 const rooms = new Map();
 
